@@ -1,4 +1,4 @@
-import 'package:camera_app/pages/home_page.dart';
+import 'package:camera_app/pages/camera_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,10 +10,21 @@ class CameraApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Camera Demo',
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      themeMode: ThemeMode.system,
+      theme: ThemeData(
+        colorSchemeSeed: Colors.blue,
+        useMaterial3: true,
+        brightness: Brightness.light,
+      ),
+      darkTheme: ThemeData(
+        colorSchemeSeed: Colors.blue,
+        useMaterial3: true,
+        brightness: Brightness.dark,
+      ),
+      title: 'Camera Demo',
+      home: const SafeArea(child: CameraPage()),
     );
   }
 }

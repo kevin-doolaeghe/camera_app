@@ -11,11 +11,7 @@ class PreviewPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Preview')),
       body: Center(
-        child: Column(mainAxisSize: MainAxisSize.min, children: [
-          Image.network(picture.path, fit: BoxFit.cover),
-          const SizedBox(height: 24),
-          Text(picture.name)
-        ]),
+        child: Image.network(picture.path, fit: BoxFit.cover),
       ),
     );
   }
